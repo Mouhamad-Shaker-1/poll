@@ -46,7 +46,7 @@ const PollForm: React.FC<PollFormPops> = ({ questions }) => {
 
   const onSubmit = async (data: FormData) => {
     // format the data to be conformtble with data must send to API
-    const answersArray = Object.entries(data).map(([answerKey, answerJson]) => {
+    const answersArray = Object.entries(data).map(([_, answerJson]) => {
       const parsedAnswer = JSON.parse(answerJson as string);
       return {
         questionId: Number(parsedAnswer.questionId),

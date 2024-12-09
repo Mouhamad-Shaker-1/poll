@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
-import { setDialogFormState, setMood } from "../../redux/moodSlice";
+import { setDialogFormState } from "../../redux/moodSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
 import CustomInput from "../CustomInput";
 import { addQuestion } from "../../redux/pollsSlice";
@@ -31,7 +31,6 @@ const DialogForm = () => {
   const {
     handleSubmit,
     control,
-    formState: { errors },
   } = useForm<FormData>();
 
   const dispatch = useDispatch<AppDispatch>();
